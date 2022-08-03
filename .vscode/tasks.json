@@ -1,0 +1,66 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run",
+            "type": "shell",
+            "command": ".\\mvnw spring-boot:run",
+            "group": "build"
+        },        {
+            "label": "debug",
+            "type": "shell",
+            "command": ".\\mvnw spring-boot:run -Drun.jvmArguments=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8080\"",
+            "group": "build"
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": ".\\mvnw clean install",
+            "group": "build"
+        },
+        {
+            "label": "debug test",
+            "type": "shell",
+            "command": ".\\mvnw Debug test -DforkMode=never",
+            "group": "test"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": ".\\mvnw test",
+            "group": "test"
+        },
+        {
+            "label": "verify",
+            "type": "shell",
+            "command": ".\\mvnw -B verify",
+            "group": "build"
+        },
+        {
+            "label": "purge",
+            "type": "shell",
+            "command": ".\\mvnw dependency:purge-local-repository",
+            "group": "test"
+        },
+        {
+            "label": "purge dre",
+            "type": "shell",
+            "command": ".\\mvnw dependency:purge-local-repository -DreResolve=false",
+            "group": "test"
+        },
+        {
+            "label": "package",
+            "type": "shell",
+            "command": ".\\mvnw package",
+            "group": "test"
+        },
+        {
+            "label": "repackage",
+            "type": "shell",
+            "command": ".\\mvnw repackage",
+            "group": "test"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+br\com\exactaworks\desafio\dinamica\gabriel\api1\initialize\ExpenseInitializer.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\Api1Application.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\config\SwaggerConfiguration.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\controller\ExpenseController.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\config\CustomConnectionFactoryInitializer.class

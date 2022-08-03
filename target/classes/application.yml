@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  r2dbc:
+    url: r2dbc:pool:mssql://localhost:1433/expense
+    username: expense
+    password: expense
+logging:
+  level:
+    org.springframework.data.r2dbc: Debug
+---
+spring:
+  profiles: test
+  r2dbc:
+    url: r2dbc:pool:mssql://localhost:1433/expense
+    username: expense
+    password: expense
+---
+spring:
+  profiles: prod
+  r2dbc:
+    url: r2dbc:pool:mssql://168.138.149.235:1433/expense
+    username: expense
+    password: expense
+  logging:
+    level:
+      org.springframework.data.r2dbc: Debug
