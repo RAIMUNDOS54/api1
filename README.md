@@ -1,2 +1,2 @@
 # api1
-api0. Reactive. With R2DBC and WebFlux enabled.
+api0 microservice project, Reactive; using R2DBC and WebFlux enabled.
