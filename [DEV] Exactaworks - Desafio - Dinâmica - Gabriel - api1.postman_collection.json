@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "0b06bed9-b5dc-415b-b5cf-2ab3bc7bf4ec",
+		"name": "[DEV] Exactaworks - Desafio - Dinâmica - Gabriel - api1",
+		"description": "Exactaworks api1 Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15045359"
+	},
+	"item": [
+		{
+			"name": "Get All Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}{{SP}}{{contextPath}}{{SP}}{{endpointPlural}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Expense",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}{{SP}}{{contextPath}}{{SP}}{{endpointPlural}}{{SP}}{{ID}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Expense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"JAAAAAoqqqqão Tetéia\",\r\n    \"description\": \"Notebook\",\r\n    \"amount\": 43.22,\r\n    \"dateRegister\": \"2022-07-31T23:40\",\r\n    \"tags\":\"tá ótimo,perfeito também\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}{{SP}}{{contextPath}}{{SP}}{{endpointPlural}}{{SP}}{{endpointSingular}}"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200 or 201\", function () {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "ID",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "contextPath",
+			"value": "api",
+			"type": "string"
+		},
+		{
+			"key": "endpointPlural",
+			"value": "expenses",
+			"type": "string"
+		},
+		{
+			"key": "endpointSingular",
+			"value": "expense",
+			"type": "string"
+		},
+		{
+			"key": "SP",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
