@@ -2,4 +2,8 @@ br\com\exactaworks\desafio\dinamica\gabriel\api1\initialize\ExpenseInitializer.c
 br\com\exactaworks\desafio\dinamica\gabriel\api1\Api1Application.class
 br\com\exactaworks\desafio\dinamica\gabriel\api1\config\SwaggerConfiguration.class
 br\com\exactaworks\desafio\dinamica\gabriel\api1\controller\ExpenseController.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\models\Expense$ExpenseBuilder.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\models\Expense.class
 br\com\exactaworks\desafio\dinamica\gabriel\api1\config\CustomConnectionFactoryInitializer.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\services\ExpenseService.class
+br\com\exactaworks\desafio\dinamica\gabriel\api1\repositories\ExpenseRepository.class
