@@ -42,6 +42,6 @@ api2:
 
 It was nice to take this little dive in the Java world. Thanks for the opportunity. I hope you guys like the .NET 7 example as well. Since you mentioned, I thought it would be a good idea to use the rest of the time after I was healed not investing in the Spring Cloud, but showing a new technology for you guys (I guess, at least for me it is) that I tend to trust and intend to use a lot in the future (even though I don't have any preferences). 
 
-Once again, thanks, and let me know if you guys want to talk about anything about me, what was done, why and such. It was a though, but joyful and spontaneous ride! 
+Once again, thanks, and let me know if you guys want to talk about anything about me, what was done, why and such. It was a though, but joyful and spontaneous ride! I wish I wasn't sick. But, if there's only one way to go, this is the way to go!
 
 See ya!
