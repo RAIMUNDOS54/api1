@@ -1,4 +1,0 @@
-{
-    "appService.preDeployTask": "package:api1",
-    "appService.deploySubpath": "target/api1-0.0.1-SNAPSHOT.jar"
-}
