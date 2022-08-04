@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.exactaworks.desafio.dinamica.gabriel.api1.Api1ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.921 s - in br.com.exactaworks.desafio.dinamica.gabriel.api1.Api1ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.16 s - in br.com.exactaworks.desafio.dinamica.gabriel.api1.Api1ApplicationTests

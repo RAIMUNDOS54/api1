@@ -2,7 +2,6 @@ package br.com.exactaworks.desafio.dinamica.gabriel.api1.controller;
 
 import br.com.exactaworks.desafio.dinamica.gabriel.api1.models.Expense;
 import br.com.exactaworks.desafio.dinamica.gabriel.api1.repositories.ExpenseRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,7 +31,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DirtiesContext
 @AutoConfigureWebTestClient
 @ActiveProfiles("test")
-@Slf4j
 public class ExpenseControllerTest {
 
     @Autowired
@@ -46,16 +44,32 @@ public class ExpenseControllerTest {
     private DatabaseClient databaseClient;
 
     private List<Expense> getData() {
-        Expense[] expenses = {new Expense(null,"Gabriel","Livro de Spring Boot", LocalDateTime.now(), new BigDecimal("39.90"), "bom,legal"),
-                              new Expense(null,"Veloso","Livro de Hibernate", LocalDateTime.now(), new BigDecimal("29.90"), "perfeito,ótimo")};
 
+		Expense[] expenses = {new Expense(null,
+										  "Gabriel","Livro de Spring Boot", 
+										  LocalDateTime.now(), 
+										  new BigDecimal("39.90"), 
+										  "bom,legal"),
+									  
+							  new Expense(null,
+										  "Veloso",
+										  "Livro de Hibernate", 
+										  LocalDateTime.now(), 
+										  new BigDecimal("29.90"), 
+										  "perfeito,ótimo")};
+		
         return Arrays.asList(expenses);
     }
 
     @BeforeEach
     public  void setup() {
         List<String> statements = Arrays.asList("DROP TABLE IF EXISTS EXPENSE;",
-                "CREATE TABLE EXPENSE (ID INT IDENTITY PRIMARY KEY, NAME VARCHAR(255) NOT NULL, DESCRIPTION VARCHAR(255) NOT NULL,DATE_REGISTER DATETIME,AMOUNT MONEY,TAGS VARCHAR(255));");
+                                                      "CREATE TABLE EXPENSE (ID INT IDENTITY PRIMARY KEY, " +
+                                                                            "NAME VARCHAR(255) NOT NULL, " +
+                                                                            "DESCRIPTION VARCHAR(255) NOT NULL, " +
+                                                                            "DATE_REGISTER DATETIME, " +
+                                                                            "AMOUNT MONEY, " +
+                                                                            "TAGS VARCHAR(255));");
 
         statements.forEach(it -> databaseClient.sql(it)
                 .fetch()
@@ -65,6 +79,7 @@ public class ExpenseControllerTest {
         expenseRepository.deleteAll()
                 .thenMany(Flux.fromIterable(getData()))
                 .flatMap(expenseRepository::save)
+
                 .doOnNext(expense ->{
                     System.out.println("Expense Inserted from ExpenseControllerTest: " + expense);
                 })
@@ -78,6 +93,7 @@ public class ExpenseControllerTest {
                 .expectHeader().contentType(MediaType.APPLICATION_JSON_VALUE)
                 .expectBodyList(Expense.class)
                 .hasSize(2)
+
                 .consumeWith(expense ->{
                     List<Expense> expenses = expense.getResponseBody();
                     expenses.forEach( u ->{

@@ -7,5 +7,3 @@ CREATE TABLE EXPENSE (
     AMOUNT MONEY,
     TAGS VARCHAR(255)
 );
-
-/*INSERT INTO EXPENSE (NAME, DESCRIPTION, DATE_REGISTER, AMOUNT, TAGS) VALUES ('Azevedo','Notebook para Java',GETDATE(), 4999.90,'rápido, incrível,estupendo');*/

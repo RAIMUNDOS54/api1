@@ -22,12 +22,22 @@ public class ExpenseInitializer implements CommandLineRunner {
     @Autowired
     private ExpenseRepository expenseRepository;
 
-    Expense[] expenses = {new Expense(null,"Gabriel","Livro de Spring Boot", LocalDateTime.now(), new BigDecimal("39.90"), "bom,legal"),
-                              new Expense(null,"Veloso","Livro de Hibernate", LocalDateTime.now(), new BigDecimal("29.90"), "perfeito,ótimo")};
+    Expense[] expenses = {new Expense(null,
+									  "Gabriel","Livro de Spring Boot", 
+									  LocalDateTime.now(), 
+									  new BigDecimal("39.90"), 
+									  "bom,legal"),
+									  
+                          new Expense(null,
+									  "Veloso",
+									  "Livro de Hibernate", 
+									  LocalDateTime.now(), 
+									  new BigDecimal("29.90"), 
+									  "perfeito,ótimo")};
 
     @Override
     public void run(String... args) {
-            initialDataSetup();
+        initialDataSetup();
     }
 
     private List<Expense> getData(){
